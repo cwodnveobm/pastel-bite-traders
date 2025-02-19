@@ -17,7 +17,7 @@ const About = () => {
               Our Story
             </h1>
             <p className="font-manrope text-lg text-rabee-black/80 mb-8">
-              At Rabee FoodStuff Trading, we believe in bringing the finest quality food products to tables across Dubai and beyond.
+              At Wadi AL Rabee FoodStuff Trading, we believe in bringing the finest quality food products to tables across Dubai and beyond.
             </p>
             <div className="mt-12 relative h-64 md:h-96 rounded-2xl overflow-hidden">
               <img
