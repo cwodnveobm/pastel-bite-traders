@@ -48,7 +48,7 @@ const About = () => {
               </p>
               <div className="mt-6 h-48 rounded-lg overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1607083206325-caf1edba7a0f?auto=format&fit=crop&w=800&q=80"
+                  src="https://i.ibb.co/hRH8s6S5/image.png"
                   alt="Mission"
                   className="w-full h-full object-cover"
                 />
@@ -68,7 +68,7 @@ const About = () => {
               </p>
               <div className="mt-6 h-48 rounded-lg overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=80"
+                  src="https://i.ibb.co/x86wkCSP/image.png"
                   alt="Vision"
                   className="w-full h-full object-cover"
                 />
