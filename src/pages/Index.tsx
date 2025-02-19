@@ -5,10 +5,21 @@ import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-rabee-offwhite">
+    <div className="min-h-screen bg-rabee-green">
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-rabee-offwhite z-10"></div>
+        {/* Hero Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1553531889-e6cf4d692b1b?auto=format&fit=crop&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-rabee-green/90 to-rabee-green/70"></div>
+        </div>
+
         <div className="container mx-auto px-4 relative z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,15 +27,18 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="font-sora text-5xl md:text-7xl font-bold text-rabee-gray mb-6">
-              Premium Food Trading
+            <h1 className="font-sora text-6xl md:text-8xl font-bold text-rabee-black mb-4">
+              Welcome Mart
             </h1>
-            <p className="font-manrope text-xl md:text-2xl text-rabee-gray/80 mb-8 max-w-2xl mx-auto">
+            <p className="font-spaceGrotesk text-2xl md:text-3xl text-rabee-darkgreen mb-8">
+              Wadi AL Rabee FoodStuff Trading
+            </p>
+            <p className="font-manrope text-xl md:text-2xl text-rabee-black/80 mb-8 max-w-2xl mx-auto">
               Bringing the finest quality food products to your table, from Dubai to the world.
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center space-x-2 bg-rabee-peach text-white px-8 py-3 rounded-full font-manrope font-medium hover:bg-rabee-rose transition-colors"
+              className="inline-flex items-center space-x-2 bg-rabee-darkgreen text-white px-8 py-3 rounded-full font-manrope font-medium hover:bg-opacity-90 transition-colors"
             >
               <span>Explore Products</span>
               <ArrowRight size={20} />
@@ -34,51 +48,72 @@ const Index = () => {
       </section>
 
       {/* Featured Categories */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-gray text-center mb-12">
-            Our Product Categories
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl bg-rabee-teal/10 p-6 hover:bg-rabee-teal/20 transition-colors"
-              >
-                <h3 className="font-spaceGrotesk text-xl font-bold text-rabee-gray mb-2">
-                  {category.name}
-                </h3>
-                <p className="font-manrope text-rabee-gray/80 mb-4">
-                  {category.description}
-                </p>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center space-x-2 text-rabee-teal hover:text-rabee-peach transition-colors"
+      <section className="py-20 bg-rabee-white">
+        <div 
+          className="relative"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80')",
+            backgroundAttachment: "fixed",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}
+        >
+          <div className="absolute inset-0 bg-rabee-white/95"></div>
+          <div className="container mx-auto px-4 relative">
+            <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-black text-center mb-12">
+              Our Product Categories
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.map((category, index) => (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative overflow-hidden rounded-2xl bg-rabee-white/80 backdrop-blur-sm p-6 hover:bg-rabee-white transition-colors shadow-lg"
                 >
-                  <span>Learn More</span>
-                  <ArrowRight size={16} />
-                </Link>
-              </motion.div>
-            ))}
+                  <h3 className="font-spaceGrotesk text-xl font-bold text-rabee-black mb-2">
+                    {category.name}
+                  </h3>
+                  <p className="font-manrope text-rabee-black/80 mb-4">
+                    {category.description}
+                  </p>
+                  <Link
+                    to="/products"
+                    className="inline-flex items-center space-x-2 text-rabee-darkgreen hover:text-rabee-black transition-colors"
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-rabee-peach/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-gray mb-6">
+      <section className="py-20 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}
+        >
+          <div className="absolute inset-0 bg-rabee-green/90"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-black mb-6">
             Ready to Experience Premium Quality?
           </h2>
-          <p className="font-manrope text-xl text-rabee-gray/80 mb-8 max-w-2xl mx-auto">
+          <p className="font-manrope text-xl text-rabee-black/80 mb-8 max-w-2xl mx-auto">
             Contact us today to learn more about our products and services.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center space-x-2 bg-rabee-teal text-white px-8 py-3 rounded-full font-manrope font-medium hover:bg-rabee-rose transition-colors"
+            className="inline-flex items-center space-x-2 bg-rabee-darkgreen text-white px-8 py-3 rounded-full font-manrope font-medium hover:bg-opacity-90 transition-colors"
           >
             <span>Get in Touch</span>
             <ArrowRight size={20} />
