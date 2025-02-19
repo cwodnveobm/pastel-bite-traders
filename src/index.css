@@ -55,7 +55,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-rabee-green text-rabee-black antialiased;
   }
   html {
     @apply scroll-smooth;
@@ -68,14 +68,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F1F1;
+  background: #F2FCE2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFD3B6;
+  background: #2D5A27;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4A5A5;
+  background: #1F3E1C;
 }

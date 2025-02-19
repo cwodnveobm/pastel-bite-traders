@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,11 +20,10 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         rabee: {
-          offwhite: "#F8F1F1",
-          peach: "#FFD3B6",
-          teal: "#B8E0D2",
-          rose: "#D4A5A5",
-          gray: "#6C757D",
+          green: "#F2FCE2",
+          darkgreen: "#2D5A27",
+          white: "#FFFFFF",
+          black: "#222222",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
