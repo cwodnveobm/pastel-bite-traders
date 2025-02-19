@@ -37,7 +37,7 @@ const Navbar = () => {
             to="/"
             className="font-spaceGrotesk text-2xl font-bold text-rabee-gray hover:text-rabee-peach transition-colors"
           >
-            Rabee
+            Welcome Mart
           </Link>
 
           {/* Desktop Navigation */}
