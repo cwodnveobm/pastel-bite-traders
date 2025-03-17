@@ -17,7 +17,7 @@ const Index = () => {
             backgroundPosition: "center"
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-rabee-green/90 to-rabee-green/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-rabee-green/75 to-rabee-green/50"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-20">
@@ -58,7 +58,7 @@ const Index = () => {
             backgroundPosition: "center"
           }}
         >
-          <div className="absolute inset-0 bg-rabee-white/95"></div>
+          <div className="absolute inset-0 bg-rabee-white/85"></div>
           <div className="container mx-auto px-4 relative">
             <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-black text-center mb-12">
               Our Product Categories
@@ -102,7 +102,7 @@ const Index = () => {
             backgroundPosition: "center"
           }}
         >
-          <div className="absolute inset-0 bg-rabee-green/90"></div>
+          <div className="absolute inset-0 bg-rabee-green/70"></div>
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-rabee-black mb-6">

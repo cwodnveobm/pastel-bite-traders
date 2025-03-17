@@ -19,7 +19,7 @@ const About = () => {
             <p className="font-manrope text-lg text-rabee-black/80 mb-8">
               At Wadi AL Rabee FoodStuff Trading, we believe in bringing the finest quality food products to tables across Dubai and beyond.
             </p>
-            <div className="mt-12 relative h-64 md:h-96 rounded-2xl overflow-hidden">
+            <div className="mt-12 relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
                 alt="Our Warehouse"
@@ -38,7 +38,7 @@ const About = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-rabee-green/30 p-8 rounded-2xl"
+              className="bg-rabee-green/20 p-8 rounded-2xl shadow-md"
             >
               <h2 className="font-spaceGrotesk text-2xl font-bold text-rabee-black mb-4">
                 Our Mission
@@ -46,9 +46,9 @@ const About = () => {
               <p className="font-manrope text-rabee-black/80">
                 To deliver premium quality food products while maintaining the highest standards of service and customer satisfaction.
               </p>
-              <div className="mt-6 h-48 rounded-lg overflow-hidden">
+              <div className="mt-6 h-48 rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="https://i.ibb.co/hRH8s6S5/image.png"
+                  src="https://images.unsplash.com/photo-1580913428023-02c695666d61?auto=format&fit=crop&w=800&q=80"
                   alt="Mission"
                   className="w-full h-full object-cover"
                 />
@@ -58,7 +58,7 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-rabee-green/30 p-8 rounded-2xl"
+              className="bg-rabee-green/20 p-8 rounded-2xl shadow-md"
             >
               <h2 className="font-spaceGrotesk text-2xl font-bold text-rabee-black mb-4">
                 Our Vision
@@ -66,9 +66,9 @@ const About = () => {
               <p className="font-manrope text-rabee-black/80">
                 To become the leading food trading company in Dubai, known for our quality products and exceptional service.
               </p>
-              <div className="mt-6 h-48 rounded-lg overflow-hidden">
+              <div className="mt-6 h-48 rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="https://i.ibb.co/x86wkCSP/image.png"
+                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
                   alt="Vision"
                   className="w-full h-full object-cover"
                 />

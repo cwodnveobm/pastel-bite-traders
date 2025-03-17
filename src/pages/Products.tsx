@@ -5,8 +5,11 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-rabee-green pt-20">
       {/* Products Header */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" 
+             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80')" }}>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
