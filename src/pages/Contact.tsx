@@ -41,21 +41,21 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real application, you would send this data to an SMS API service
-      // For demonstration, we'll log the data and show a success message
-      console.log(`Sending SMS to +971 52 258 6807 with data:`, data);
+      // Format the WhatsApp message
+      const whatsappMessage = `Name: ${data.name}%0AEmail: ${data.email}%0AMessage: ${data.message}`;
+      const whatsappUrl = `https://wa.me/971522586807?text=${whatsappMessage}`;
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
       
-      toast.success("Message sent successfully!", {
-        description: "We'll get back to you soon.",
+      toast.success("WhatsApp opened successfully!", {
+        description: "Your message is ready to be sent via WhatsApp.",
       });
       
       form.reset();
     } catch (error) {
-      console.error("Error sending message:", error);
-      toast.error("Failed to send message", {
+      console.error("Error opening WhatsApp:", error);
+      toast.error("Failed to open WhatsApp", {
         description: "Please try again or contact us directly via phone.",
       });
     } finally {
@@ -189,9 +189,9 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-rabee-darkgreen text-white font-manrope font-medium py-3 rounded-lg hover:bg-opacity-90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full bg-rabee-darkgreen text-white font-manrope font-medium py-3 rounded-lg hover:bg-opacity-90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? "Processing..." : "Send via WhatsApp"}
                   </button>
                 </form>
               </Form>
