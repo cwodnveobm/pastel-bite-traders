@@ -1,5 +1,11 @@
 
 import { motion } from "framer-motion";
+import { 
+  Card, 
+  CardContent, 
+  CardHeader
+} from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Products = () => {
   return (
@@ -36,23 +42,28 @@ const Products = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-rabee-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-spaceGrotesk text-xl font-bold text-rabee-black mb-2">
-                    {category.name}
-                  </h3>
-                  <p className="font-manrope text-rabee-black/80 mb-4">
-                    {category.description}
-                  </p>
-                </div>
+                <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-full bg-white">
+                  <div className="relative">
+                    <AspectRatio ratio={16/9} className="bg-muted">
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                      />
+                    </AspectRatio>
+                  </div>
+                  <CardHeader className="p-4">
+                    <h3 className="font-spaceGrotesk text-xl font-bold text-rabee-black">
+                      {category.name}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <p className="font-manrope text-rabee-black/80">
+                      {category.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -71,7 +82,7 @@ const productCategories = [
   {
     name: "Grains",
     description: "Wholesome grains from trusted suppliers worldwide.",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d32f6?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d32f6?auto=format&fit=crop&w=800&q=90",
   },
   {
     name: "Dairy Products",
