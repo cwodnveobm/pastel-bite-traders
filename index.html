@@ -5,20 +5,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome Mart - Premium Food Trading by Wadi AL Rabee FoodStuff Trading</title>
-    <meta name="description" content="Discover premium quality foodstuff products including dates, grains, dairy, and spices. Welcome Mart by Rabee FoodStuff Trading brings the finest food products from Dubai to the world." />
-    <meta name="keywords" content="food trading, premium dates, organic grains, dairy products, quality spices, Dubai food import, foodstuff trading, Welcome Mart" />
+    <meta name="description" content="Explore premium quality dates, grains, dairy products, spices and more. Welcome Mart sources the finest ingredients directly from trusted suppliers worldwide." />
+    <meta name="keywords" content="premium dates Dubai, organic grains wholesale, dairy products supplier, quality spices import, Dubai food trading, foodstuff trading UAE, Welcome Mart Dubai, bulk food import" />
     <meta name="author" content="Wadi AL Rabee FoodStuff Trading" />
+    
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Welcome Mart - Premium Food Trading" />
     <meta property="og:description" content="Premium food products including dates, grains, dairy, and spices imported from trusted suppliers worldwide." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="/lovable-uploads/0f2c879e-55d3-497a-83cb-4e74464b78e4.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://welcomemart.com" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Welcome Mart - Premium Food Trading" />
+    <meta name="twitter:description" content="Premium food products including dates, grains, dairy, and spices imported from trusted suppliers worldwide." />
+    <meta name="twitter:image" content="/lovable-uploads/0f2c879e-55d3-497a-83cb-4e74464b78e4.png" />
+    
+    <!-- Favicon -->
     <link rel="icon" href="/lovable-uploads/0f2c879e-55d3-497a-83cb-4e74464b78e4.png" type="image/png" />
     <link rel="shortcut icon" href="/lovable-uploads/0f2c879e-55d3-497a-83cb-4e74464b78e4.png" type="image/png" />
     <link rel="apple-touch-icon" href="/lovable-uploads/0f2c879e-55d3-497a-83cb-4e74464b78e4.png" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Retargeting Pixel Code (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '123456789'); // Replace with your actual Pixel ID
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=123456789&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your actual GA ID
+    </script>
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -38,6 +77,44 @@
       "sameAs": [
         "https://facebook.com/welcomemart",
         "https://instagram.com/welcomemart"
+      ]
+    }
+    </script>
+    
+    <!-- Product Schema for Products Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Premium Dates",
+            "description": "Premium quality dates sourced from the finest farms in the region.",
+            "category": "Food",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Organic Grains",
+            "description": "Wholesome grains from trusted suppliers worldwide.",
+            "category": "Food",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        }
       ]
     }
     </script>

@@ -7,10 +7,50 @@ import {
 } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Products = () => {
+  // Track page view for product category page
+  useEffect(() => {
+    // Google Analytics event tracking
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_title: 'Product Categories',
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      });
+    }
+    
+    // Facebook Pixel tracking
+    if (window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_name: 'Product Categories',
+        content_category: 'Products'
+      });
+    }
+  }, []);
+
+  // Track category clicks for retargeting
+  const trackCategoryClick = (category: string) => {
+    // Google Analytics event tracking
+    if (window.gtag) {
+      window.gtag('event', 'select_content', {
+        content_type: 'product_category',
+        item_id: category.toLowerCase().replace(' ', '_')
+      });
+    }
+    
+    // Facebook Pixel tracking
+    if (window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_name: category,
+        content_category: 'Product Category'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-rabee-green pt-20">
       {/* Products Header - SEO Enhanced */}
@@ -37,9 +77,9 @@ const Products = () => {
       </section>
 
       {/* Product Categories - SEO Enhanced */}
-      <section className="py-20 bg-rabee-white">
+      <section className="py-20 bg-rabee-white" id="product-categories" aria-labelledby="product-categories-heading">
         <div className="container mx-auto px-4">
-          <h2 className="font-sora text-3xl font-bold text-rabee-black text-center mb-12">
+          <h2 id="product-categories-heading" className="font-sora text-3xl font-bold text-rabee-black text-center mb-12">
             Our Product Categories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -55,7 +95,7 @@ const Products = () => {
                     <AspectRatio ratio={16/9} className="bg-muted">
                       <img
                         src={category.image}
-                        alt={`${category.name} - Premium quality ${category.name.toLowerCase()} from Welcome Mart`}
+                        alt={`${category.name} - Premium quality ${category.name.toLowerCase()} from Welcome Mart Dubai`}
                         className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                       />
                     </AspectRatio>
@@ -69,10 +109,28 @@ const Products = () => {
                     <p className="font-manrope text-rabee-black/80 mb-4">
                       {category.description}
                     </p>
-                    <Button variant="ghost" className="text-rabee-darkgreen p-0 hover:bg-transparent hover:text-rabee-black">
-                      <span>Learn more</span>
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <div className="flex justify-between items-center">
+                      <Button 
+                        variant="ghost" 
+                        className="text-rabee-darkgreen p-0 hover:bg-transparent hover:text-rabee-black"
+                        onClick={() => trackCategoryClick(category.name)}
+                      >
+                        <span>Learn more</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="rounded-full" 
+                        onClick={() => window.navigator.share?.({
+                          title: `${category.name} - Welcome Mart`,
+                          text: category.description,
+                          url: `${window.location.origin}/products#${category.name.toLowerCase().replace(' ', '-')}`
+                        }).catch(() => {})}
+                      >
+                        <Share2 className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -82,9 +140,9 @@ const Products = () => {
       </section>
       
       {/* SEO-Enhanced Product Benefits Section */}
-      <section className="py-20 bg-rabee-green/50">
+      <section className="py-20 bg-rabee-green/50" id="product-benefits" aria-labelledby="product-benefits-heading">
         <div className="container mx-auto px-4">
-          <h2 className="font-sora text-3xl font-bold text-rabee-black text-center mb-12">
+          <h2 id="product-benefits-heading" className="font-sora text-3xl font-bold text-rabee-black text-center mb-12">
             Why Choose Our Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,6 +166,33 @@ const Products = () => {
         </div>
       </section>
       
+      {/* FAQ Section - Great for SEO */}
+      <section className="py-20 bg-rabee-white" id="product-faqs" aria-labelledby="product-faqs-heading">
+        <div className="container mx-auto px-4">
+          <h2 id="product-faqs-heading" className="font-sora text-3xl font-bold text-rabee-black text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="mb-6 border-b border-rabee-green/30 pb-6 last:border-0"
+              >
+                <h3 className="font-spaceGrotesk text-xl font-bold text-rabee-black mb-2">
+                  {faq.question}
+                </h3>
+                <p className="font-manrope text-rabee-black/80">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Call to Action */}
       <section className="py-16 bg-rabee-darkgreen text-white">
         <div className="container mx-auto px-4 text-center">
@@ -120,6 +205,22 @@ const Products = () => {
           <Link
             to="/contact"
             className="inline-flex items-center bg-white text-rabee-darkgreen px-8 py-3 rounded-full font-manrope font-medium hover:bg-opacity-90 transition-colors"
+            onClick={() => {
+              // Track CTA click for retargeting
+              if (window.gtag) {
+                window.gtag('event', 'generate_lead', {
+                  event_category: 'engagement',
+                  event_label: 'contact_from_products'
+                });
+              }
+              
+              if (window.fbq) {
+                window.fbq('track', 'Lead', {
+                  content_name: 'Products Page CTA',
+                  content_category: 'Contact Interest'
+                });
+              }
+            }}
           >
             <span>Get in Touch</span>
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -189,5 +290,36 @@ const benefits = [
     description: "We can tailor our product offerings to meet your specific business requirements and market demands."
   }
 ];
+
+const faqs = [
+  {
+    question: "What are your minimum order quantities?",
+    answer: "Our minimum order quantities vary by product category. For most items, we offer flexible options starting from small wholesale amounts to container-load quantities. Please contact our sales team for specific product MOQs."
+  },
+  {
+    question: "Do you ship internationally?",
+    answer: "Yes, Welcome Mart ships products worldwide. We have established logistics partnerships that ensure safe and timely delivery of our products to international destinations. Shipping costs and delivery times vary by location."
+  },
+  {
+    question: "Are your products Halal certified?",
+    answer: "Yes, all our food products are Halal certified by recognized certification bodies. We can provide the necessary documentation upon request."
+  },
+  {
+    question: "What quality standards do your products meet?",
+    answer: "Our products comply with international food safety standards including HACCP, ISO 22000, and GMP. We regularly conduct quality audits and maintain stringent quality control measures throughout our supply chain."
+  },
+  {
+    question: "Can you provide product samples?",
+    answer: "Yes, we offer product samples for qualified business inquiries. Please contact our sales team to arrange for product samples based on your specific requirements."
+  }
+];
+
+// Add TypeScript declaration for window object
+declare global {
+  interface Window {
+    gtag?: (command: string, action: string, params?: any) => void;
+    fbq?: (command: string, event: string, params?: any) => void;
+  }
+}
 
 export default Products;
