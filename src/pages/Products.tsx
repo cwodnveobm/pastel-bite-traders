@@ -139,7 +139,7 @@ const productCategories = [
   {
     name: "Grains",
     description: "Wholesome grains from trusted suppliers worldwide. Our selection includes organic options and traditional varieties.",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d32f6?auto=format&fit=crop&w=800&q=90",
+    image: "/lovable-uploads/2984af4b-1349-42f5-871e-e7cb5133706c.png",
   },
   {
     name: "Dairy Products",
