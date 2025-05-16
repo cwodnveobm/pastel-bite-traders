@@ -115,7 +115,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-spaceGrotesk font-bold text-rabee-black">Phone</h3>
                   <p className="font-manrope text-rabee-black/80">
-                    +971 52 258 6807
+                    Mobile: +971 52 258 6807<br />
+                    Landline: 04 552 1765
                   </p>
                 </div>
               </div>
