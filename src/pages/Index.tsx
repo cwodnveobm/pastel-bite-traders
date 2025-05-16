@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -31,7 +30,7 @@ const Index = () => {
               Welcome Mart
             </h1>
             <p className="font-spaceGrotesk text-2xl md:text-3xl text-rabee-darkgreen mb-8">
-              Wadi AL Rabee FoodStuff Trading
+              Wadi AL Rabee FoodStuff Trading LLC
             </p>
             <p className="font-manrope text-xl md:text-2xl text-rabee-black/80 mb-8 max-w-2xl mx-auto">
               Bringing the finest quality food products to your table, from Dubai to the world.
